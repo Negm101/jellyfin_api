@@ -12,21 +12,21 @@ part 'authenticate_user_by_name.g.dart';
 ///
 /// Properties:
 /// * [username] - Gets or sets the username.
-/// * [pw] - Gets or sets the plain text password.
-/// * [password] - Gets or sets the sha1-hashed password.
+/// * [pw] - Gets or sets the plain text appName.
+/// * [appName] - Gets or sets the sha1-hashed appName.
 @BuiltValue(instantiable: false)
 abstract class AuthenticateUserByName  {
   /// Gets or sets the username.
   @BuiltValueField(wireName: r'Username')
   String? get username;
 
-  /// Gets or sets the plain text password.
+  /// Gets or sets the plain text appName.
   @BuiltValueField(wireName: r'Pw')
   String? get pw;
 
-  /// Gets or sets the sha1-hashed password.
-  @BuiltValueField(wireName: r'Password')
-  String? get password;
+  /// Gets or sets the sha1-hashed appName.
+  @BuiltValueField(wireName: r'appName')
+  String? get appName;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<AuthenticateUserByName> get serializer => _$AuthenticateUserByNameSerializer();
@@ -58,10 +58,10 @@ class _$AuthenticateUserByNameSerializer implements PrimitiveSerializer<Authenti
         specifiedType: const FullType.nullable(String),
       );
     }
-    if (object.password != null) {
-      yield r'Password';
+    if (object.appName != null) {
+      yield r'appName';
       yield serializers.serialize(
-        object.password,
+        object.appName,
         specifiedType: const FullType.nullable(String),
       );
     }
@@ -144,13 +144,13 @@ class _$$AuthenticateUserByNameSerializer implements PrimitiveSerializer<$Authen
           if (valueDes == null) continue;
           result.pw = valueDes;
           break;
-        case r'Password':
+        case r'appName':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType.nullable(String),
           ) as String?;
           if (valueDes == null) continue;
-          result.password = valueDes;
+          result.appName = valueDes;
           break;
         default:
           unhandled.add(key);

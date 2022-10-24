@@ -15,8 +15,8 @@ abstract class AuthenticateUserByNameBuilder {
   String? get pw;
   set pw(String? pw);
 
-  String? get password;
-  set password(String? password);
+  String? get appName;
+  set appName(String? appName);
 }
 
 class _$$AuthenticateUserByName extends $AuthenticateUserByName {
@@ -25,13 +25,13 @@ class _$$AuthenticateUserByName extends $AuthenticateUserByName {
   @override
   final String? pw;
   @override
-  final String? password;
+  final String? appName;
 
   factory _$$AuthenticateUserByName(
           [void Function($AuthenticateUserByNameBuilder)? updates]) =>
       (new $AuthenticateUserByNameBuilder()..update(updates))._build();
 
-  _$$AuthenticateUserByName._({this.username, this.pw, this.password})
+  _$$AuthenticateUserByName._({this.username, this.pw, this.appName})
       : super._();
 
   @override
@@ -49,13 +49,13 @@ class _$$AuthenticateUserByName extends $AuthenticateUserByName {
     return other is $AuthenticateUserByName &&
         username == other.username &&
         pw == other.pw &&
-        password == other.password;
+        appName == other.appName;
   }
 
   @override
   int get hashCode {
     return $jf(
-        $jc($jc($jc(0, username.hashCode), pw.hashCode), password.hashCode));
+        $jc($jc($jc(0, username.hashCode), pw.hashCode), appName.hashCode));
   }
 
   @override
@@ -63,7 +63,7 @@ class _$$AuthenticateUserByName extends $AuthenticateUserByName {
     return (newBuiltValueToStringHelper(r'$AuthenticateUserByName')
           ..add('username', username)
           ..add('pw', pw)
-          ..add('password', password))
+          ..add('appName', appName))
         .toString();
   }
 }
@@ -82,9 +82,9 @@ class $AuthenticateUserByNameBuilder
   String? get pw => _$this._pw;
   set pw(covariant String? pw) => _$this._pw = pw;
 
-  String? _password;
-  String? get password => _$this._password;
-  set password(covariant String? password) => _$this._password = password;
+  String? _appName;
+  String? get appName => _$this._appName;
+  set appName(covariant String? appName) => _$this._appName = appName;
 
   $AuthenticateUserByNameBuilder() {
     $AuthenticateUserByName._defaults(this);
@@ -95,7 +95,7 @@ class $AuthenticateUserByNameBuilder
     if ($v != null) {
       _username = $v.username;
       _pw = $v.pw;
-      _password = $v.password;
+      _appName = $v.appName;
       _$v = null;
     }
     return this;
@@ -118,7 +118,7 @@ class $AuthenticateUserByNameBuilder
   _$$AuthenticateUserByName _build() {
     final _$result = _$v ??
         new _$$AuthenticateUserByName._(
-            username: username, pw: pw, password: password);
+            username: username, pw: pw, appName: appName);
     replace(_$result);
     return _$result;
   }

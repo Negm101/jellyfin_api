@@ -12,13 +12,13 @@ class _$AuthenticateUserByNameRequest extends AuthenticateUserByNameRequest {
   @override
   final String? pw;
   @override
-  final String? password;
+  final String? appName;
 
   factory _$AuthenticateUserByNameRequest(
           [void Function(AuthenticateUserByNameRequestBuilder)? updates]) =>
       (new AuthenticateUserByNameRequestBuilder()..update(updates))._build();
 
-  _$AuthenticateUserByNameRequest._({this.username, this.pw, this.password})
+  _$AuthenticateUserByNameRequest._({this.username, this.pw, this.appName})
       : super._();
 
   @override
@@ -36,13 +36,13 @@ class _$AuthenticateUserByNameRequest extends AuthenticateUserByNameRequest {
     return other is AuthenticateUserByNameRequest &&
         username == other.username &&
         pw == other.pw &&
-        password == other.password;
+        appName == other.appName;
   }
 
   @override
   int get hashCode {
     return $jf(
-        $jc($jc($jc(0, username.hashCode), pw.hashCode), password.hashCode));
+        $jc($jc($jc(0, username.hashCode), pw.hashCode), appName.hashCode));
   }
 
   @override
@@ -50,7 +50,7 @@ class _$AuthenticateUserByNameRequest extends AuthenticateUserByNameRequest {
     return (newBuiltValueToStringHelper(r'AuthenticateUserByNameRequest')
           ..add('username', username)
           ..add('pw', pw)
-          ..add('password', password))
+          ..add('appName', appName))
         .toString();
   }
 }
@@ -70,9 +70,9 @@ class AuthenticateUserByNameRequestBuilder
   String? get pw => _$this._pw;
   set pw(covariant String? pw) => _$this._pw = pw;
 
-  String? _password;
-  String? get password => _$this._password;
-  set password(covariant String? password) => _$this._password = password;
+  String? _appName;
+  String? get appName => _$this._appName;
+  set appName(covariant String? appName) => _$this._appName = appName;
 
   AuthenticateUserByNameRequestBuilder() {
     AuthenticateUserByNameRequest._defaults(this);
@@ -83,7 +83,7 @@ class AuthenticateUserByNameRequestBuilder
     if ($v != null) {
       _username = $v.username;
       _pw = $v.pw;
-      _password = $v.password;
+      _appName = $v.appName;
       _$v = null;
     }
     return this;
@@ -106,7 +106,7 @@ class AuthenticateUserByNameRequestBuilder
   _$AuthenticateUserByNameRequest _build() {
     final _$result = _$v ??
         new _$AuthenticateUserByNameRequest._(
-            username: username, pw: pw, password: password);
+            username: username, pw: pw, appName: appName);
     replace(_$result);
     return _$result;
   }

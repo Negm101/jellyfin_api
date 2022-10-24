@@ -13,8 +13,8 @@ part 'authenticate_user_by_name_request.g.dart';
 ///
 /// Properties:
 /// * [username] - Gets or sets the username.
-/// * [pw] - Gets or sets the plain text password.
-/// * [password] - Gets or sets the sha1-hashed password.
+/// * [pw] - Gets or sets the plain text appName.
+/// * [appName] - Gets or sets the sha1-hashed appName.
 @BuiltValue()
 abstract class AuthenticateUserByNameRequest implements AuthenticateUserByName, Built<AuthenticateUserByNameRequest, AuthenticateUserByNameRequestBuilder> {
   AuthenticateUserByNameRequest._();
@@ -40,10 +40,10 @@ class _$AuthenticateUserByNameRequestSerializer implements PrimitiveSerializer<A
     AuthenticateUserByNameRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.password != null) {
-      yield r'Password';
+    if (object.appName != null) {
+      yield r'appName';
       yield serializers.serialize(
-        object.password,
+        object.appName,
         specifiedType: const FullType.nullable(String),
       );
     }
@@ -84,13 +84,13 @@ class _$AuthenticateUserByNameRequestSerializer implements PrimitiveSerializer<A
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'Password':
+        case r'appName':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType.nullable(String),
           ) as String?;
           if (valueDes == null) continue;
-          result.password = valueDes;
+          result.appName = valueDes;
           break;
         case r'Pw':
           final valueDes = serializers.deserialize(
